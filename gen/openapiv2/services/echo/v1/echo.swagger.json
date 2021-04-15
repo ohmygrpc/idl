@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/echo": {
+    "/echo/v1/echo": {
       "get": {
         "operationId": "EchoService_Echo",
         "responses": {
@@ -46,7 +46,7 @@
         ]
       }
     },
-    "/v1/health": {
+    "/echo/v1/health": {
       "get": {
         "operationId": "EchoService_HealthCheck",
         "responses": {

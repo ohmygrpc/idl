@@ -5,19 +5,19 @@ package services.echo.v1;
 option go_package = "github.com/grpc-boilerplate/idl/gen/go/services/echov1";
 option java_multiple_files = true;
 option java_outer_classname = "EchoProto";
-option java_package = "com.github.grpc-boilerplate.idl.services.echo.v1";
+option java_package = "com.github.grpcboilerplate.idl.services.echo.v1";
 
 import "google/api/annotations.proto";
 
 service EchoService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
     option (google.api.http) = {
-      get: "/v1/health"
+      get: "/echo/v1/health"
     };
   }
   rpc Echo(EchoRequest) returns (EchoResponse) {
     option (google.api.http) = {
-      get: "/v1/echo"
+      get: "/echo/v1/echo"
     };
   }
 }
