@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  - push
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 5
+
+      - name: Lint
+        run: |
+          make format && make diff
+          make lint
+
+  generate:
+    name: Generate & Diff
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 5
+
+      - name: Clean
+        run: |
+          make clean
+
+      - name: Generate
+        run: |
+          make generate
+
+      - name: Diff
+        run: |
+          make diff

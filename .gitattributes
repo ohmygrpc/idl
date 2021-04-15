@@ -1,0 +1,4 @@
+gen/**/* linguist-vendored
+gen/**/* linguist-generated=true
+
+*.proto linguist-detectable=true
