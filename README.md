@@ -1,3 +1,3 @@
 # idl
 
-> gRPC services and events IDL (Interfae Definition Language)
+> gRPC services and events IDL (Interface Definition Language)
