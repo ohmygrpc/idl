@@ -1,8 +1,10 @@
 #!/bin/bash
 
 IDL_PATH=/go/src/github.com/ohmygrpc/idl
-PROTOBUF_COMMIT_SHA=f9d8238cc442e3e94282f81efbef45bcdde6134b
+DOCKER_BUF_VERSION=1.0.0
 
-docker run --rm -i --name protobuf -v "$(pwd)":$IDL_PATH -w $IDL_PATH --entrypoint /bin/sh taehoio/protobuf:$PROTOBUF_COMMIT_SHA -c '\
-  buf generate \
-'
+docker run --rm -i \
+  --name buf \
+  --volume "$(pwd)":$IDL_PATH \
+  --workdir $IDL_PATH \
+  kanziw/buf:$DOCKER_BUF_VERSION generate
