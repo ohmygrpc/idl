@@ -15,7 +15,6 @@ jobs:
 
       - name: Lint
         run: |
-          make format && make diff
           make lint
 
   generate:
